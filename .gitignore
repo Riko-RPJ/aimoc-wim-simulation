@@ -1,0 +1,14 @@
+node_modules/
+dist/
+tmp/
+.vercel/
+.local/
+.env*
+STATUS.md
+test-results/
+coverage/
+*.log
+*.pem
+*.key
+*.p12
+*.pfx

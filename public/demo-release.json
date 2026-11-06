@@ -1,0 +1,21 @@
+{
+  "release": "netsuite-alignment-2026-11-04-r3",
+  "simulation_only": true,
+  "phases": [
+    "phase1_single_static",
+    "phase2_static_wim"
+  ],
+  "presentation": true,
+  "demo_ticket": true,
+  "direct_ticket_pdf": true,
+  "erp_connected": false,
+  "persistence": false,
+  "quarry_demo": true,
+  "quarry_traffic": true,
+  "quarry_logistics": true,
+  "quarry_barge_catalog": true,
+  "quarry_directional_metrics": true,
+  "quarry_custom_lane_fix": true,
+  "erp_system": "oracle_netsuite",
+  "canonical_erp_contract": true
+}

@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {assessODOL} from '../public/odol-data.js';
+const limits={length_m:12,width_m:3.2,height_m:4.2,gross_kg:80000},dim={length_m:9.045,width_m:3.2,height_m:3.77};
+test('ODOL uses dimensions and independent gross weight, including exact limit',()=>{assert.equal(assessODOL(dim,71100,limits).status,'WITHIN_EXAMPLE_LIMITS');assert.equal(assessODOL(dim,80000,limits).over_load,false);const a=assessODOL(dim,90000,{...limits,width_m:2.5});assert.equal(a.status,'ODOL');assert.ok(Math.abs(a.rows[1].excess-.7)<1e-8);assert.equal(a.rows[3].excess,10000);});
+test('Missing or faulted readings remain unknown, not a compliant result',()=>{assert.equal(assessODOL(null,null,limits).status,'PENDING');assert.equal(assessODOL(dim,null,limits).over_load,null);assert.equal(assessODOL({width_m:3},71100,limits).over_dimension,null);});

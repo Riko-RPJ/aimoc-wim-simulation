@@ -1,0 +1,52 @@
+{
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 15
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/hybrid.html",
+      "destination": "/parallel.html",
+      "permanent": true
+    },
+    {
+      "source": "/downloads/AIMOC_WIM_Parallel_PAR_R01_IND.pdf",
+      "destination": "/downloads/AIMOC_WIM_Static_MOD_R03_IND.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/AIMOC_WIM_Static_Hercules_HER_R02_IND.pdf",
+      "destination": "/downloads/AIMOC_WIM_Static_MOD_R03_IND.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/AIMOC_WIM_Parallel_PAR_R01_EN.pdf",
+      "destination": "/downloads/AIMOC_WIM_Static_MOD_R03_EN.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/AIMOC_WIM_Static_Hercules_HER_R02_EN.pdf",
+      "destination": "/downloads/AIMOC_WIM_Static_MOD_R03_EN.pdf",
+      "permanent": false
+    }
+  ]
+}
