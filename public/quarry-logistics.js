@@ -1,9 +1,9 @@
 // Pure, synthetic material ledger. No network, persistence, ERP writes, or vessel safety certification.
 export const NETSUITE_CANDIDATES = Object.freeze([
-  {stage:'crusher_good_output',candidate:'Work Order Completion / Assembly Build, after item/BOM/WIP design',requires:'Manufacturing features, cost/issue/yield policy and account-specific validation',url:'https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_N2335392.html'},
-  {stage:'own_stockpile_transfer',candidate:'Transfer Order -> Item Fulfillment -> Item Receipt',requires:'Multi-Location Inventory and approved location/subsidiary/UOM mapping; keeps in-transit stage',url:'https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N2308766.html'},
-  {stage:'immediate_own_transfer',candidate:'Inventory Transfer, only for approved immediate movement',requires:'No independent in-transit stage; never post this as well as the Transfer Order for the same movement',url:'https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_0817112542.html'},
-  {stage:'buyer_shipment',candidate:'Sales Order -> Item Fulfillment, at approved shipping/ownership milestone',requires:'Customer/order line/location/UOM mapping, Advanced Shipping/billing policy; not a second stock transfer',url:'https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_161425629582.html'}
+  {stage:'crusher_good_output',candidate:'Work Order Completion / Assembly Build, after item/BOM/WIP design',requires:'Manufacturing features, cost/issue/yield policy and account-specific validation',url:'https://td3104537.app.netsuite.com/app/accounting/transactions/invadjst.nl?id=46830'},
+  {stage:'own_stockpile_transfer',candidate:'Transfer Order -> Item Fulfillment -> Item Receipt',requires:'Multi-Location Inventory and approved location/subsidiary/UOM mapping; keeps in-transit stage',url:'https://td3104537.app.netsuite.com/app/accounting/transactions/trnfrord.nl?id=46831'},
+  {stage:'immediate_own_transfer',candidate:'Inventory Transfer, only for approved immediate movement',requires:'No independent in-transit stage; never post this as well as the Transfer Order for the same movement',url:'https://td3104537.app.netsuite.com/app/accounting/transactions/invtrnfr.nl?id=46823'},
+  {stage:'buyer_shipment',candidate:'Sales Order -> Item Fulfillment, at approved shipping/ownership milestone',requires:'Customer/order line/location/UOM mapping, Advanced Shipping/billing policy; not a second stock transfer',url:'https://td3104537.app.netsuite.com/app/accounting/transactions/salesord.nl?id=46824'}
 ]);
 export const DEFAULT_QUARRY_CONFIG = Object.freeze({
   average_volume_m3:30,density_t_per_m3:1.5,loaded_trips_per_hour:250,empty_returns_per_hour:250,
